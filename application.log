@@ -51,3 +51,11 @@
 2026-04-02T11:22:05.756-03:00  INFO 48856 --- [AppExample] [restartedMain] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
 2026-04-02T11:22:05.758-03:00  INFO 48856 --- [AppExample] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
 2026-04-02T11:22:05.764-03:00  INFO 48856 --- [AppExample] [restartedMain] b.c.s.t.t.TaskManagerApplication         : Started TaskManagerApplication in 3.545 seconds (process running for 4.753)
+2026-04-02T11:28:34.739-03:00  INFO 48856 --- [AppExample] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-02T11:28:34.845-03:00  INFO 48856 --- [AppExample] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-04-02T11:28:34.847-03:00  INFO 48856 --- [AppExample] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-02T11:28:34.847-03:00 DEBUG 48856 --- [AppExample] [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
+    drop table if exists tasks cascade 
+2026-04-02T11:28:34.852-03:00  WARN 48856 --- [AppExample] [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-240]
+2026-04-02T11:28:34.852-03:00  INFO 48856 --- [AppExample] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : taskManagerHikariCP - Shutdown initiated...
+2026-04-02T11:28:34.853-03:00  INFO 48856 --- [AppExample] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : taskManagerHikariCP - Shutdown completed.
